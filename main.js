@@ -32,12 +32,19 @@ import { getDataToUpdate } from "./updateUI.js";
 import { getDataToAppend } from "./updateUI.js";
 import { getDataToRemove } from "./updateUI.js";
 
+//Scroll.js
+import { appendScrollBar } from "./scroll.js";
+import { calcBarLength } from "./scroll.js";
+
 window.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   setTheming();
   setLoadAnimDelay();
   mobileMenuSetup();
+
+  const allScrollElms = document.querySelectorAll("#orders ol, #taps ol, #storage ol, #personel ul, body");
+  allScrollElms.forEach(appendScrollBar);
 
   const url = "https://foobarfirefjerdedele.herokuapp.com/";
   let newData = await getJSON(url);
@@ -46,6 +53,8 @@ async function init() {
   setTodaysNumbers(newData);
 
   displayDataInit(newData);
+
+  allScrollElms.forEach(calcBarLength);
 
   const beerSectionBtns = document.querySelectorAll("#beers button");
   beerSectionBtns.forEach((btn) => {
@@ -64,6 +73,8 @@ async function init() {
 
     updateTodaysNumbers(newData);
     setTheming();
+
+    allScrollElms.forEach(calcBarLength);
 
     //remove loadingscreen - should be fired just after init-display, but we think look so cool and deserves more spotlight :)
     document.querySelector("#loading").classList.remove("load");

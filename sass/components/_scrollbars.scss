@@ -1,16 +1,44 @@
 @import "../abstracts/";
 
 ::-webkit-scrollbar {
-  width: 4px;
-  background: transparent;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $heading_clr;
-  border-radius: 4px;
+  width: 0px;
 }
 
 // Best it can get for firefox...
 * {
-  scrollbar-width: thin;
+  scrollbar-width: 0px;
+}
+
+.scroll_container {
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: var(--top-scrolled);
+  right: 0;
+  border-radius: 2px;
+  box-shadow: $vertical_inner;
+
+  transition: opacity 0.5s, box-shadow 0.5s;
+
+  & .bar {
+    width: inherit;
+    height: var(--scroll-height);
+    background-color: $heading_clr;
+    border-radius: inherit;
+  }
+
+  &.hide {
+    opacity: 0;
+    box-shadow: inset 0px 0px 2px $shadow, inset 0px 0px 2px $light;
+  }
+}
+
+body > .scroll_container {
+  position: fixed;
+  top: 0;
+  border-radius: 0;
 }

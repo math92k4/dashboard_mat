@@ -1,6 +1,7 @@
 @import "../abstracts";
 
 #personel ul {
+  position: relative;
   overflow-y: scroll;
   height: 100%;
   margin-top: 40px;
@@ -11,7 +12,7 @@
     max-width: 90%;
   }
 
-  & li:first-child {
+  & li:first-of-type {
     margin-top: 0;
   }
 }
