@@ -1,0 +1,40 @@
+// COLORS
+$bg_clr: var(--bg-clr);
+$heading_clr: var(--heading-clr);
+$para_clr: var(--para-clr);
+
+$dannie: #e59f5e;
+$peter: #5b81cc;
+$jonas: #56dcc4;
+
+$green_clr: #2cdc90;
+$yellow_clr: #ffaa4e;
+$red_clr: #ff545d;
+
+//overlays
+$outer_light: var(--outer-light);
+$inner_light: var(--inner-light);
+
+// tints
+$light: var(--light);
+$shadow: var(--shadow);
+
+//
+//
+//SHADOWS
+//mains
+$large_outer: 5px 5px 10px $shadow, -5px -5px 10px $light;
+$medium_outer: 2px 2px 4px $shadow, -2px -2px 4px $light;
+$medium_inner: inset 2px 2px 4px $shadow, inset -2px -2px 4px $light;
+$small_outer: 1px 1px 2px $shadow, -1px -1px 2px $light;
+$small_inner: inset 1px 1px 2px $shadow, inset -1px -1px 2px $light;
+
+//bars
+$vertical_inner: inset 3px 1px 4px $shadow, inset -3px -1px 4px $light;
+$horisontal_shadow: inset 0px 1px 2px $shadow, inset 0px -1px 2px $light;
+
+//
+//
+//MEDIAS
+$tablet: 650px;
+$desktop: 1100px;

@@ -1,0 +1,35 @@
+@import "../abstracts/";
+
+.flex_container {
+  display: flex;
+}
+
+section {
+  background-color: $bg_clr;
+  flex-direction: column;
+  display: none !important;
+
+  &.open {
+    display: flex !important;
+  }
+}
+
+#performance {
+  margin-top: 50px;
+}
+
+@media only screen and (min-width: $tablet) {
+  section {
+    display: flex !important;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: $large_outer;
+  }
+
+  #performance {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+}

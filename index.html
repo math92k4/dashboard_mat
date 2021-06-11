@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <title>FooBar - Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="open" data-trigger="personel performance"></button>
+        <button data-trigger="orders"></button>
+        <button data-trigger="beers"></button>
+        <button data-trigger="todays_numbers"></button>
+      </nav>
+    </header>
+    <main>
+      <section id="personel" class="open">
+        <h1>Personel</h1>
+        <ul></ul>
+      </section>
+
+      <section id="orders">
+        <h1>Orders</h1>
+        <ol></ol>
+      </section>
+
+      <section id="beers">
+        <nav><button id="taps_btn" class="clicked">Taps</button><button id="storage_btn">Storage</button></nav>
+
+        <article id="taps" class="show">
+          <div class="flex_container">
+            <h2>Beer</h2>
+            <h2>Tap</h2>
+          </div>
+          <ol></ol>
+        </article>
+
+        <article id="storage">
+          <div class="flex_container">
+            <h2>Beer</h2>
+            <h2>Kegs</h2>
+          </div>
+          <ol></ol>
+        </article>
+      </section>
+
+      <section id="performance" class="open">
+        <h1>Bartender performance</h1>
+        <figure>
+          <!-- TODO: Indsæt svg // undersøg hvad passer bedst til grafen -->
+          <div class="first_circle inner">
+            <div class="container outer">
+              <div class="inner floating">
+                <div class="outer">
+                  <div class="inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
+        <ul></ul>
+      </section>
+
+      <section id="todays_numbers">
+        <h1>Todays numbers</h1>
+        <ul>
+          <li class="beers_sold"><span class="bullet"></span>Beers sold: <span class="txt"></span></li>
+          <li class="best_beer"><span class="bullet"></span>Best selling: <span class="txt"></span></li>
+          <li class="best_bartender"><span class="bullet"></span>Top bartender: <span class="txt"></span></li>
+          <li class="longest_waiting_time"><span class="bullet"></span>Longest waiting-time: <span class="txt"></span></li>
+        </ul>
+        <!-- <img src="" alt="" id="logo" /> -->
+      </section>
+    </main>
+
+    <template id="bartenders_temp">
+      <li>
+        <div class="bartender_icon icon_l">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              class="st0"
+              d="M12,4C9.8,4,8,5.8,8,8s1.8,4,4,4s4-1.8,4-4S14.2,4,12,4z M12,14c-2.7,0-8,1.3-8,4v2h16v-2
+	C20,15.3,14.7,14,12,14z"
+            />
+          </svg>
+        </div>
+        <div>
+          <h2></h2>
+          <p class="status">Status: <span></span></p>
+        </div>
+      </li>
+    </template>
+
+    <template id="orders_temp">
+      <li>
+        <div class="flex_container">
+          <div>
+            <h2></h2>
+            <p>
+              <!-- hver øl skal appendes i span, så de kan blive grønne -->
+            </p>
+          </div>
+          <div class="flex_container">
+            <div class="bartender_icon hide icon_s">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  class="st0"
+                  d="M12,4C9.8,4,8,5.8,8,8s1.8,4,4,4s4-1.8,4-4S14.2,4,12,4z M12,14c-2.7,0-8,1.3-8,4v2h16v-2
+	C20,15.3,14.7,14,12,14z"
+                />
+              </svg>
+            </div>
+            <figure>
+              <div class="time_icon icon_s">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2ZM12,20a8,8,0,1,1,8-8A8,8,0,0,1,12,20Zm.5-13H11v6l5.25,3.15L17,14.92l-4.5-2.67Z" />
+                </svg>
+              </div>
+              <figcaption></figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <template id="taps_temp">
+      <li>
+        <div class="tap_info">
+          <p></p>
+          <figure>
+            <div class="beer_bar"></div>
+          </figure>
+        </div>
+        <p class="tap_id"></p>
+      </li>
+    </template>
+
+    <template id="storage_temp">
+      <li>
+        <p class="beer_name"></p>
+        <p class="beer_kegs"></p>
+      </li>
+    </template>
+
+    <div id="loading" class="load">
+      <div class="cl1">
+        <div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio src="./sounds/button_clicked.wav" hidden></audio>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

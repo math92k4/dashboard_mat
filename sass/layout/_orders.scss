@@ -1,0 +1,27 @@
+@import "../abstracts";
+
+#orders {
+  & .flex_container {
+    justify-content: space-between;
+  }
+
+  & ol {
+    overflow-y: scroll;
+    height: 100%;
+    margin-top: 40px;
+  }
+
+  & li:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  & p {
+    margin: 5px 10px 0 0;
+  }
+
+  & figcaption {
+    text-align: center;
+    margin: 5px 15px 0 0;
+    font-size: 0.8rem;
+  }
+}

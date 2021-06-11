@@ -1,0 +1,58 @@
+@import "../abstracts/";
+
+:root {
+  font-size: 14px;
+}
+
+p,
+li,
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+li {
+  font-size: 1rem;
+  color: $para_clr;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $para_clr;
+}
+
+h1,
+#beers button {
+  font-weight: 400;
+  font-size: 2rem;
+  color: $heading_clr;
+  position: relative;
+}
+
+#beers button {
+  margin-bottom: 20px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  box-shadow: $horisontal_shadow;
+}
+
+@media only screen and (min-width: $tablet) {
+}
+
+@media only screen and (min-width: $desktop + 300px) {
+  :root {
+    font-size: 16px;
+  }
+}
